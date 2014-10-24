@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OldMacDonald extends PApplet {
+
 // Oliver Noss AP Computer Science Block 4
 public void setup()
 {
@@ -60,7 +76,7 @@ class Chick implements Animal
 	public Chick(String type, String sound1, String sound2)
 	{
 		myType = type;
-		if(Math.random()>.5)
+		if(Math.random()>.5f)
 			mySound = sound1;
 		else {
 			mySound = sound2;
@@ -100,4 +116,13 @@ class NamedCow extends Cow
 	{
 		return myName;
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OldMacDonald" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
